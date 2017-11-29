@@ -27,3 +27,5 @@ tshark -l -i eth0 -f "udp && port 53" | awk '{ if ($12 == "MX"){print "MXRES",$7
 # --
 # RES 145 kim.ns.cloudflare.com
 # --
+
+# Note: The number above is the size of the request or response, if too large, it may be an ongoing DNS exfiltration attack.
