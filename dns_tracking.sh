@@ -31,3 +31,4 @@ tshark -l -i eth0 -f "udp && port 53" | awk '{ if ($12 == "MX"){print "MXRES",$7
 # RES 188 A
 
 # Note: The numbers in output are the size of the requests or responses: if too large, it may a signal of an ongoing DNS exfiltration attack.
+# i.e. Many large DNS requests within a short time period warrants a closer look!
