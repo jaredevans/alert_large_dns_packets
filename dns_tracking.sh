@@ -11,7 +11,7 @@
 # i.e. Many large DNS requests within a short time period warrants a closer look!
 
 SIZE="$1"
-tshark -l -i eth0 -f "udp && port 53" | awk -v size="$SIZE" '{ if ($10 == "response" ){} else if ($7 > size){system("/root/send_alert.sh LARGE_REQ " $3 " " $7 " " $12);} }'
+tshark -l -i eth0 -f "port 53" | awk -v size="$SIZE" '{ if ($10 == "response" ){} else if ($7 > size){system("/root/send_alert.sh LARGE_REQ " $3 " " $7 " " $12);} }'
 
 # Output contains the IP address making the DNS request, the size of the request, and the host to be resolved.
 
