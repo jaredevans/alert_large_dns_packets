@@ -10,6 +10,8 @@
 # If the size of a request is too large, it may be a signal of an ongoing DNS exfiltration attack.
 # i.e. Many large DNS requests within a short time period warrants a closer look!
 
+# DNS can be used over port 53 for both UDP and TCP protocols.
+
 SIZE="$1"
 tshark -l -i eth0 -f "port 53" | awk -v size="$SIZE" '{ if ($10 == "response" ){} else if ($7 > size){system("/root/send_alert.sh LARGE_REQ " $3 " " $7 " " $12);} }'
 
