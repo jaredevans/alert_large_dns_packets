@@ -4,6 +4,6 @@ May help with the detection of on-going DNS exfiltration attack.
 
 For example, unusual DNS request would be:
 
-012345678901234567890123456789012345678901234567890123456789012.foo.com
+visa.4603203598956889.391.1019.adrian.otis.hackerownedfoo.com
 
 if a server or endpoint is making many of these types of large DNS requests, it's likely that internal data is being sent to an outsider.
