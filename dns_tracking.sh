@@ -16,6 +16,6 @@ tshark -l -i eth0 -f "udp && port 53" | awk -v size="$SIZE" '{ if ($10 == "respo
 # Output contains the IP address making the DNS request, the size of the request, and the host to be resolved.
 
 # LARGE_REQ 104.236.104.209 132 visa.4603203598956889.391.1019.adrian.otis.hackerownedfoo.com
-# LARGE_REQ 204.236.104.209 142 012345678901234567890123456789012345678901234567890123456789012.foo.com
+# LARGE_REQ 204.236.104.209 142 012345678901234567890123456789012345678901234567890123456789012.hackerownedfoo.com
 
 # These lines are passed, one by one, onto the script that will actually send the alert.
